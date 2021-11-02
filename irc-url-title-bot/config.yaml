@@ -3,10 +3,10 @@ host: irc.anzub.net
 ssl_port: 6667
 nick: baz
 channels:
-  - '#Politics'
-  - '#Science'
-  - '#TV'
+  - '#politics'
   - '#primer'
+  - '#science'
+  - '#tv'
 
 # Optional:
 alerts_channel: '#baz-alerts'
