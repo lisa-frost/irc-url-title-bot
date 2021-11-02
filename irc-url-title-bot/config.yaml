@@ -4,8 +4,9 @@ ssl_port: 6667
 nick: baz
 channels:
   - '#Politics'
-  - '#primer'
   - '#Science'
+  - '#TV'
+  - '#primer'
 
 # Optional:
 alerts_channel: '#baz-alerts'
