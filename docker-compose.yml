@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  irc-url-title-bot:
+    container_name: irc-url-title-bot
+    image: lisafrost/irc-url-title-bot:latest
+    restart: always
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    volumes:
+      - ./irc-url-title-bot:/config:ro
+    env_file:
+      - ./secrets.env

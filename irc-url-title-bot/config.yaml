@@ -1,0 +1,49 @@
+# Mandatory:
+host: irc.anzub.net
+ssl_port: 6667
+nick: baz
+channels:
+  - '#Politics'
+  - '#primer'
+  - '#Science'
+
+# Optional:
+alerts_channel: '#baz-alerts'
+blacklist:
+  title:
+    - Invalid host
+    - Untitled
+  url:
+    - model.fit
+    - tf.app
+ignores:
+  - some_user1
+  - some_user2
+mode:
+  '+B'
+
+# Site-specific (optional):
+sites:
+  arxiv.org:
+    format:
+      - re:
+          url: /pdf/(?P<url_id>.+?)(?:\.pdf)*$
+        str:
+          title: '{title} | https://arxiv.org/abs/{url_id}'
+      - re:
+          url: /abs/(?P<url_id>.+?)$
+        str:
+          title: '{title} | https://arxiv.org/pdf/{url_id}'
+  bpaste.net:
+    blacklist:
+      title: show at bpaste
+  imgur.com:
+    blacklist:
+      title: 'Imgur: The magic of the Internet'
+  paste.ee:
+    blacklist:
+      title_re: ^Paste\.ee\ \-\ View\ paste\b
+  youtube.com:
+    blacklist:
+      channels:
+        - '##some_chan2'

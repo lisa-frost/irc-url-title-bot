@@ -1,10 +1,9 @@
-FROM python:3.9-slim-buster as build
+FROM python:3.9.7-slim-buster as build
 # python:3.7-slim-stretch (using Debian 9) has fewer issues with invalid https certificiates than python:3.7-slim-buster (using Debian 10).
 # As of 2019-11-29, python:3.8-slim-stretch doesn't exist. See https://github.com/docker-library/python/issues/428
 WORKDIR /app
 COPY requirements.txt .
 RUN set -x && \
-    sed -i 's/@SECLEVEL=2/@SECLEVEL=1/' /etc/ssl/openssl.cnf && \
     pip install --no-cache-dir -U pip wheel && \
     pip install --no-cache-dir -r ./requirements.txt
 # Note: Regarding SECLEVEL, see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=927461
