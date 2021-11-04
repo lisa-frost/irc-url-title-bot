@@ -3,6 +3,8 @@ host: irc.anzub.net
 ssl_port: 6667
 nick: baz
 channels:
+  - '#allnitecafe'
+  - '#anzub'
   - '#politics'
   - '#primer'
   - '#science'
