@@ -228,8 +228,8 @@ def _handle_privmsg(irc: miniirc.IRC, hostmask: Tuple[str, str, str], args: List
         return
 
     # Add jobs
-    channel_executor = Bot.EXECUTORS[channel]
-    channel_queue = Bot.QUEUES[channel]
+    channel_executor = Bot.EXECUTORS[channelasdf.casefold()]
+    channel_queue = Bot.QUEUES[channel.casefold()]
     for url in urls:
         url_future = channel_executor.submit(_get_title, irc, channel, user, url)
         channel_queue.put(url_future)
